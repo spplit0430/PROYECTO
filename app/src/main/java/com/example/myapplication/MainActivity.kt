@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            val forgotPasswordLink = findViewById<TextView>(R.id.forgot_password_link)
+            forgotPasswordLink.setOnClickListener {
+                val intent = Intent(this, ForgotPasswordActivity::class.java) // Actividad de olvido de contraseña
+                startActivity(intent)
+            }
+
         } else {
             setContentView(R.layout.activity_main_registrarse) // Layout de registro
         }

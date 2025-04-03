@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#4A708B"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#4A708B">
+    android:padding="20dp">
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/salida_olvido2"
         android:layout_width="32dp"
         android:layout_height="25dp"
         android:layout_marginStart="0dp"
@@ -37,14 +37,14 @@
         android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:text="Nombre"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_title"
-        android:layout_marginStart="40dp" />
+        app:layout_constraintTop_toBottomOf="@id/label_title" />
 
     <EditText
         android:id="@+id/nombre_text"
@@ -52,9 +52,9 @@
         android:layout_height="45dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
-        android:textSize="17sp"
         android:background="@drawable/edit_text_registrar_2"
         android:padding="8dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombre" />
@@ -63,14 +63,14 @@
         android:id="@+id/apellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:text="Apellido"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_title"
-        android:layout_marginStart="40dp" />
+        app:layout_constraintTop_toBottomOf="@id/label_title" />
 
     <EditText
         android:id="@+id/apellido_text"
@@ -78,9 +78,9 @@
         android:layout_height="45dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
-        android:textSize="17sp"
         android:background="@drawable/edit_text_registrar_2"
         android:padding="8dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/apellido" />
@@ -89,14 +89,14 @@
         android:id="@+id/correo_electronico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:text="Correo Electronico"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/apellido_text"
-        android:layout_marginStart="40dp" />
+        app:layout_constraintTop_toBottomOf="@id/apellido_text" />
 
     <EditText
         android:id="@+id/correo_electronico_text"
@@ -104,9 +104,9 @@
         android:layout_height="45dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
-        android:textSize="17sp"
         android:background="@drawable/edit_text_registrar_2"
         android:padding="8dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/correo_electronico" />
@@ -115,14 +115,14 @@
         android:id="@+id/contraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:text="Contraseña"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/correo_electronico_text"
-        android:layout_marginStart="40dp" />
+        app:layout_constraintTop_toBottomOf="@id/correo_electronico_text" />
 
     <EditText
         android:id="@+id/contraseña_text"
@@ -130,9 +130,9 @@
         android:layout_height="45dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
-        android:textSize="17sp"
         android:background="@drawable/edit_text_registrar_2"
         android:padding="8dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contraseña" />
@@ -141,14 +141,14 @@
         android:id="@+id/fecha_de_nacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:text="Fecha De Nacimiento"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contraseña_text"
-        android:layout_marginStart="40dp" />
+        app:layout_constraintTop_toBottomOf="@id/contraseña_text" />
 
     <EditText
         android:id="@+id/fecha_de_nacimiento_text"
@@ -156,9 +156,9 @@
         android:layout_height="45dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
-        android:textSize="17sp"
         android:background="@drawable/edit_text_registrar_2"
         android:padding="8dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fecha_de_nacimiento" />
