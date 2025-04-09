@@ -49,6 +49,8 @@ class LoginActivity : AppCompatActivity() {
                 Method.POST, url,
                 { response ->
                     try {
+                        println("🔍 Respuesta del servidor: $response")
+
                         val json = JSONObject(response)
                         val success = json.getBoolean("success")
                         val message = json.getString("message")
@@ -56,12 +58,23 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
                         if (success) {
-                            // Redirigir al menú principal
-                            val intent = Intent(this, MenuPrincipalActivity::class.java)
+                            val nombre = json.optString("nombre")
+                            val apellido = json.optString("apellido")
+                            val correoUsuario = json.optString("correo")
+                            val fechaNacimiento = json.optString("fechaNacimiento")
+
+                            val intent = Intent(this, MenuPrincipalActivity::class.java).apply {
+                                putExtra("nombre", nombre)
+                                putExtra("apellido", apellido)
+                                putExtra("correo", correoUsuario)
+                                putExtra("fechaNacimiento", fechaNacimiento)
+                            }
                             startActivity(intent)
                             finish()
                         }
+
                     } catch (e: Exception) {
+                        e.printStackTrace()
                         Toast.makeText(this, "Error al procesar respuesta del servidor", Toast.LENGTH_LONG).show()
                     }
                 },
