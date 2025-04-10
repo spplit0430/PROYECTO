@@ -40,10 +40,11 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         apellidoLabel.text = apellido
 
         // 🔸 Botón de retroceso (icono)
-        val botonRetroceso = findViewById<ImageView>(R.id.salida_olvido2)
+        val botonRetroceso = findViewById<ImageView>(R.id.salida_olvido3)
         botonRetroceso.setOnClickListener {
-            finish() // Finaliza la actividad actual y regresa
+            finish() // Finaliza la actividad actual y vuelve a la anterior (activity_main_principal.xml)
         }
+
 
         // 🔸 Botón "Actualizar Información" → navegar a otra vista
         val actualizarBtn = findViewById<Button>(R.id.login_button)
