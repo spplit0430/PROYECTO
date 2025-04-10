@@ -24,6 +24,8 @@
         <activity android:name=".ForgotPasswordActivity" android:exported="true" />
         <activity android:name=".MenuPrincipalActivity" android:exported="true" />
         <activity android:name=".PerfilUsuarioActivity" />
+        <activity android:name=".ActualizarUsuarioActivity" />
+
 
 
         <!-- ✅ LoginActivity como pantalla principal -->

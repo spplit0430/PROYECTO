@@ -20,14 +20,14 @@ class LoginActivity : AppCompatActivity() {
         val passwordField = findViewById<EditText>(R.id.password_field)
         val loginButton = findViewById<Button>(R.id.login_button)
 
-        // ✅ Enlace a Registrarse (TextView)
+        //Enlace a Registrarse
         val registerLink = findViewById<TextView>(R.id.register_link)
         registerLink.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        // ✅ Enlace a ¿Olvidaste tu contraseña? (TextView)
+        //Enlace a ¿Olvidaste tu contraseña?
         val forgotPasswordLink = findViewById<TextView>(R.id.forgot_password_link)
         forgotPasswordLink.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)

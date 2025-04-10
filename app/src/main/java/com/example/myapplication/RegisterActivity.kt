@@ -35,7 +35,7 @@ class RegisterActivity : AppCompatActivity() {
             val contrasena = contrasenaText.text.toString().trim()
             val fechaNacimiento = fechaNacimientoText.text.toString().trim()
 
-            // ✅ Validación de campos vacíos
+            // Validación de campos vacíos
             if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || fechaNacimiento.isEmpty()) {
                 Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener

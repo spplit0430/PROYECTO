@@ -40,12 +40,14 @@
                 android:layout_weight="1" />
 
             <ImageView
+                android:id="@+id/salida_olvido2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="05dp"
                 android:src="@drawable/retroceso" />
 
             <ImageView
+                android:id="@+id/btn_menu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/menu" />

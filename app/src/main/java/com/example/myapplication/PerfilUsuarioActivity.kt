@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -12,13 +13,13 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2_usuario)
 
-        // 🔸 Obtener datos desde el intent
+        // Obtener datos desde el intent
         val nombre = intent.getStringExtra("nombre") ?: ""
         val apellido = intent.getStringExtra("apellido") ?: ""
         val correo = intent.getStringExtra("correo") ?: ""
         val fechaNacimiento = intent.getStringExtra("fechaNacimiento") ?: ""
 
-        // 🔸 Referencias a los EditText
+        // Referencias a los EditText
         val nombreText = findViewById<EditText>(R.id.nombre_text)
         val apellidoText = findViewById<EditText>(R.id.apellido_text)
         val correoText = findViewById<EditText>(R.id.correo_electronico_text)
@@ -44,10 +45,18 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             finish() // Finaliza la actividad actual y regresa
         }
 
-        // 🔸 Botón "Actualizar" (puedes agregar lógica para actualizar los datos en base de datos aquí)
+        // 🔸 Botón "Actualizar Información" → navegar a otra vista
         val actualizarBtn = findViewById<Button>(R.id.login_button)
         actualizarBtn.setOnClickListener {
-            // Aquí puedes agregar código para guardar los datos actualizados si es necesario
+            val intent = Intent(this, ActualizarUsuarioActivity::class.java)
+
+            // 🔄 Enviar los datos actuales al nuevo Activity
+            intent.putExtra("nombre", nombreText.text.toString())
+            intent.putExtra("apellido", apellidoText.text.toString())
+            intent.putExtra("correo", correoText.text.toString())
+            intent.putExtra("fechaNacimiento", fechaNacimientoText.text.toString())
+
+            startActivity(intent)
         }
     }
 }
