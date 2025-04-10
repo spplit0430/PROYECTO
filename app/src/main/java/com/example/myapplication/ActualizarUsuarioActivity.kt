@@ -26,7 +26,6 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         val correo = intent.getStringExtra("correo") ?: ""
         val fechaNacimiento = intent.getStringExtra("fechaNacimiento") ?: ""
 
-        // Guardamos el correo original (el que ya estaba antes de modificar)
         val correoAnterior = correo.trim().lowercase()
 
         nombreText.setText(nombre)
@@ -58,14 +57,14 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                 { response ->
                     Toast.makeText(this, response, Toast.LENGTH_SHORT).show()
 
-                    // Redirigir a perfil con los datos actualizados
-                    val intent = Intent(this, PerfilUsuarioActivity::class.java).apply {
+                    // ✅ Enviar los datos actualizados de vuelta a PerfilUsuarioActivity
+                    val resultIntent = Intent().apply {
                         putExtra("nombre", nuevoNombre)
                         putExtra("apellido", nuevoApellido)
                         putExtra("correo", nuevoCorreo)
                         putExtra("fechaNacimiento", nuevaFechaNacimiento)
                     }
-                    startActivity(intent)
+                    setResult(RESULT_OK, resultIntent)
                     finish()
                 },
                 { error ->
@@ -73,13 +72,13 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                 }
             ) {
                 override fun getParams(): Map<String, String> {
-                    val params = HashMap<String, String>()
-                    params["correo_anterior"] = correoAnterior
-                    params["correo_electronico"] = nuevoCorreo // ← Aquí se usa el nombre correcto
-                    params["nombre"] = nuevoNombre
-                    params["apellido"] = nuevoApellido
-                    params["fechaNacimiento"] = nuevaFechaNacimiento
-                    return params
+                    return mapOf(
+                        "correo_anterior" to correoAnterior,
+                        "correo_electronico" to nuevoCorreo,
+                        "nombre" to nuevoNombre,
+                        "apellido" to nuevoApellido,
+                        "fechaNacimiento" to nuevaFechaNacimiento
+                    )
                 }
             }
 
